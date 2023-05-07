@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 
+import { signIn, getInformUser } from "../../store/userSlice";
 import { apiRequest } from "../../services/service";
 import Navbar from "../navbar/Navbar";
 import styled from "./Form.module.css";
@@ -14,6 +16,7 @@ const Form = () => {
 
   const { params } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChangeInputEmail = (e) => {
     setEmail(e.target.value);
@@ -49,7 +52,9 @@ const Form = () => {
           apiRequest.login(email, password);
           const res = await apiRequest.getCurrentUser();
           if(res.data.message === 'ok') {
-            localStorage.setItem('currentUser', JSON.stringify(res.data));
+            // localStorage.setItem('currentUser', JSON.stringify(res.data));
+            dispatch(signIn(res.data));
+            dispatch(getInformUser());
             navigate('/');
           }
         }else {

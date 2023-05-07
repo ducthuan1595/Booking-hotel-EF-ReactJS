@@ -2,13 +2,14 @@
   width: 100%;
   width: 1024px;
   font-size: 12px;
+  margin: 40px auto 20px auto;
 }
 
 .fLists{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .fList{

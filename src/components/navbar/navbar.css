@@ -27,6 +27,19 @@
   text-decoration: none;
 }
 
+.navItems {
+  display: flex;
+}
+
+.navItems div {
+  margin-right: 10px;
+  line-height: 28px;
+}
+
 .navItems a {
   margin-right: 10px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #0071c2;
 }

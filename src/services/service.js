@@ -11,6 +11,19 @@ class Api {
   };
   getCurrentUser() {
     return axios.get(`${url}/get-current-user`);
+  };
+
+  getAllHotel() {
+    return axios.get(`${url}/get-all-hotel`);
+  };
+  searchHotel(time, numberOfPeople, where, numberOfRoom) {
+    return axios.post(`${url}/search-hotel`, { time, numberOfPeople, where, numberOfRoom})
+  };
+  getDetailHotel(hotelId) {
+    return axios.get(`${url}/detail-hotel/${hotelId}`)
+  };
+  bookHotel(startDate, endDate, fullName, email, phoneNumber, identify, price, roomNumber, roomId, payment) {
+    return axios.post(`${url}/book-hotel`, { startDate, endDate, fullName, email, phoneNumber, identify, price, roomNumber, roomId, payment })
   }
 }
 

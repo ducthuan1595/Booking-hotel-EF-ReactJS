@@ -1,0 +1,77 @@
+.booking{
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.date {
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+}
+
+.select-room {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.info-room {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 10px;
+}
+
+.promo {
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+  font-weight: 300;
+}
+
+.check {
+  display: flex;
+height: 70px;
+flex-wrap: wrap;
+}
+.ground {
+height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+}
+
+.pay{
+  display: flex;
+}
+
+.method select{
+  padding: 10px 40px 10px 10px;
+  background-color: #efefef;
+  border-radius: 4px;
+  outline: none;
+}
+
+.btn button {
+  padding: 12px 50px;
+  border-radius: 4px;
+  background-color: #0071c2;
+  border: none;
+  color: #fff;
+  margin-left: 40px;
+}

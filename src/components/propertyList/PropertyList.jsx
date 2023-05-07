@@ -1,6 +1,9 @@
 import "./propertyList.css";
 
-const PropertyList = () => {
+const PropertyList = ({ onType }) => {
+
+  const type = onType.type;
+
   return (
     <div className="pList">
       <div className="pListItem">
@@ -11,7 +14,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Hotels</h1>
-          <h2>233 hotels</h2>
+          <h2>{type ? type.hotel : 0} hotels</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -22,7 +25,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Apartments</h1>
-          <h2>2331 hotels</h2>
+          <h2>{type ? type.apartments : 0} hotels</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -33,7 +36,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Resorts</h1>
-          <h2>2331 hotels</h2>
+          <h2>{type ? type.resorts : 0} hotels</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -44,7 +47,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Villas</h1>
-          <h2>2331 hotels</h2>
+          <h2>{type ? type.villas : 0} hotels</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -55,7 +58,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Cabins</h1>
-          <h2>2331 hotels</h2>
+          <h2>{type ? type.cabins : 0} hotels</h2>
         </div>
       </div>
     </div>

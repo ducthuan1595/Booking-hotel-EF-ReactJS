@@ -15,6 +15,10 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { searchListHotel } from "../../store/hotelSlice";
+import { apiRequest } from "../../services/service";
+
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
@@ -33,7 +37,13 @@ const Header = ({ type }) => {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const onNavigate = () => {
+    navigate('/form/login');
+  }
+
+  
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -42,9 +52,19 @@ const Header = ({ type }) => {
       };
     });
   };
-
-  const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+  
+  // Search
+  const handleSearch = async() => {
+    try{
+      const res = await apiRequest.searchHotel(date, options.adult, destination, options.room);
+      // console.log(res);
+      if(res.data.message === 'ok') {
+        dispatch(searchListHotel(res.data.result));
+        navigate("/hotels", { state: { destination, date, options } });
+      }
+    }catch(err) {
+      console.log(err)
+    }
   };
 
   return (
@@ -85,7 +105,7 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            <button className="headerBtn" onClick={onNavigate}>Sign in / Register</button>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

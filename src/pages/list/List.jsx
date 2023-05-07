@@ -89,9 +89,7 @@ const List = () => {
             <button>Search</button>
           </div>
           <div className="listResult">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+            <SearchItem date={date}/>
           </div>
         </div>
       </div>

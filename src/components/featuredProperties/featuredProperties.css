@@ -24,6 +24,10 @@
   font-weight: bold;
 }
 
+.fpName a {
+  text-decoration: none;
+}
+
 .fpCity{
   font-weight: 300;
 }
