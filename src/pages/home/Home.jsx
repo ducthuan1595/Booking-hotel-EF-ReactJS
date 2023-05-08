@@ -63,11 +63,10 @@ const Home = () => {
           cabins: typeCabin.length
         };
         setType(types);
-
         const number = {
-          hanoi: numberHotelWithHanoi.length,
-          danang: numberHotelWithDanang.length,
-          hcm: numberHotelWithHCM.length
+          hanoi: numberHotelWithHanoi,
+          danang: numberHotelWithDanang,
+          hcm: numberHotelWithHCM
         };
         // console.log('number',types);
         setNumberHotelWithCity(number);
@@ -75,6 +74,8 @@ const Home = () => {
     };
     getAllHotels();
   }, [])
+
+  console.log('number', numberHotelWithCity);
 
   return (
     <div>

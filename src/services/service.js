@@ -22,8 +22,11 @@ class Api {
   getDetailHotel(hotelId) {
     return axios.get(`${url}/detail-hotel/${hotelId}`)
   };
-  bookHotel(startDate, endDate, fullName, email, phoneNumber, identify, price, roomNumber, roomId, payment) {
-    return axios.post(`${url}/book-hotel`, { startDate, endDate, fullName, email, phoneNumber, identify, price, roomNumber, roomId, payment })
+  bookHotel({...booking}) {
+    return axios.post(`${url}/book-hotel`, { ...booking })
+  };
+  getTransactionWithUser(userId) {
+    return axios.get(`${url}/get-transaction/${userId}`)
   }
 }
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const Featured = ({ onNumberOfHotel }) => {
   let number = onNumberOfHotel.numberHotelWithCity;
-  
+  console.log(number);
   return (
     <div className="featured">
       <div className="featuredItem">
@@ -13,8 +13,8 @@ const Featured = ({ onNumberOfHotel }) => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Dublin</h1>
-          <h2>{number ? number.hanoi : 0} properties</h2>
+          <h1>{number ? number.hanoi[0].city : ''}</h1>
+          <h2>{number ? number.hanoi.length : 0} properties</h2>
         </div>
       </div>
       
@@ -25,8 +25,8 @@ const Featured = ({ onNumberOfHotel }) => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Reno</h1>
-          <h2>{number ? number.danang : 0} properties</h2>
+          <h1>Da Nang</h1>
+          <h2>{number ? number.danang.length : 0} properties</h2>
         </div>
       </div>
       <div className="featuredItem">
@@ -36,8 +36,8 @@ const Featured = ({ onNumberOfHotel }) => {
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Austin</h1>
-          <h2>{number ? number.hcm : 0} properties</h2>
+          <h1>{number ? number.hcm[0].city : ''}</h1>
+          <h2>{number ? number.hcm.length : 0} properties</h2>
         </div>
       </div>
     </div>

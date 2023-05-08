@@ -43,12 +43,12 @@
   color: white;
   font-weight: 500;
   border: none;
-  padding: 10px;
+  padding: 18px 12px;
   cursor: pointer;
 }
 
 .headerSearch {
-  height: 30px;
+  height: 48px;
   background-color: white;
   border: 3px solid #febb02;
   display: flex;

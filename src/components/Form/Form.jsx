@@ -12,6 +12,7 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [checkEmail, setCheckEmail] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
+  const [checkSubmit, setCheckSubmit] = useState('');
   const [isInvalid, setInvalid] = useState(true);
 
   const { params } = useParams();
@@ -21,14 +22,17 @@ const Form = () => {
   const handleChangeInputEmail = (e) => {
     setEmail(e.target.value);
     setCheckEmail('');
+    setCheckSubmit('');
   };
 
   const handleChangeInputPassword = (e) => {
     setPassword(e.target.value);
     setCheckPassword('');
+    setCheckSubmit('');
   };
 
   const handleBlurPassword = () => {
+    setCheckSubmit('');
     setCheckPassword('Password must be at least 8 chars');
     if(password.trim().length > 7) {
       setCheckPassword('')
@@ -37,6 +41,7 @@ const Form = () => {
   };
 
   const handleBlurEmail = () => {
+    setCheckSubmit('');
     setCheckEmail('Invalid email!');
     if(email.includes('@') && email.trim().length > 0) {
       setCheckEmail('')
@@ -49,7 +54,8 @@ const Form = () => {
     if(!isInvalid) {
       try{
         if(params === 'login') {
-          apiRequest.login(email, password);
+          const data = await apiRequest.login(email, password);
+          console.log(data);
           const res = await apiRequest.getCurrentUser();
           if(res.data.message === 'ok') {
             // localStorage.setItem('currentUser', JSON.stringify(res.data));
@@ -64,8 +70,11 @@ const Form = () => {
         setEmail('');
         setPassword('');
       }catch(err) {
+        setCheckSubmit('Excuse me! Your info invalid!');
         console.log(err)
       }
+    }else {
+      setCheckSubmit('Excuse me! Your info invalid!');
     }
   };
   return (
@@ -95,6 +104,7 @@ const Form = () => {
             />
             <div className={styled.error} >{checkPassword}</div>
           </div>
+          <div className={styled.error}>{checkSubmit}</div>
           <button type='submit' onClick={handleClick}>
             {params === "login" ? "Login" : "Register"}
           </button>

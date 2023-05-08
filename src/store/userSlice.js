@@ -20,7 +20,6 @@ const userSlice = createSlice({
       state.isLogin = true;
     },
     signOut: (state) => {
-      console.log('delete');
       localStorage.removeItem('currentUser');
       state.isLogin = false;
     },

@@ -8,6 +8,7 @@ import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
 import Form from "./components/Form/Form";
 import Booking from "./pages/booking/Booking";
+import Transactions from "./pages/transaction/Transactions";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/hotels" element={<List/>}/>
         <Route path="/hotels/:id" element={<Hotel/>}/>
         <Route path="/booking" element={<Booking/>}/>
+        <Route path='/transaction' element={<Transactions />} />
       </Routes>
     </BrowserRouter>
   );

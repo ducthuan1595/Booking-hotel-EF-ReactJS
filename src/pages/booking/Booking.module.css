@@ -75,3 +75,19 @@ height: 50px;
   color: #fff;
   margin-left: 40px;
 }
+
+.error {
+  color: rgb(232, 187, 103);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.message-error {
+  margin-left:40px;
+  color: rgb(235, 143, 93);
+  font-size: 16px;
+}
+
+.total {
+  margin-top: 40px;
+}

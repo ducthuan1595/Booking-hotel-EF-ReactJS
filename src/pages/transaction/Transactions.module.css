@@ -1,0 +1,42 @@
+.transaction table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction {
+  margin: 40px 0;
+}
+
+.transaction h4 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.transaction td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.transaction thead tr:first-child {
+  background-color: #32a4c1;
+  color: #fff;
+}
+
+.transaction tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+.transaction .btn {
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #fff;
+  border: none;
+}
+
+.message-error {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(221, 87, 34);
+}

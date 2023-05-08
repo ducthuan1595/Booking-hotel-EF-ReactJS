@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="navItems">
           {/* <button onClick={handleLogout}>signOut</button> */}
           {isLogin && <div>{user.user.email}</div>}
-          <Link to={isLogin ? '' : '/form/register'} >{isLogin ? 'Transaction' : 'Register'}</Link>
+          <Link to={isLogin ? '/transaction' : '/form/register'} >{isLogin ? 'Transaction' : 'Register'}</Link>
           <Link to='/form/login' onClick={handleLogout}>{isLogin ? 'Logout' : 'Login'}</Link>
         </div>
       </div>
