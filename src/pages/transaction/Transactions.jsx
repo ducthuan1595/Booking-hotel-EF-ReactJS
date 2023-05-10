@@ -44,7 +44,7 @@ const Transactions = () => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(transactions).length !== 0  ?
+            {transactions  ?
               transactions.map((item, index) => {
                 const rooms = item.rooms.map(room => {
                   return room.roomNumber;
@@ -74,7 +74,7 @@ const Transactions = () => {
                 return (
                   <tr key={item._id}>
                     <td>{index + 1}</td>
-                    <td>{item.hotel[0].hotelId.name}</td>
+                    <td>{item.hotelId.name}</td>
                     <td>{rooms}</td>
                     <td>{startDate}-{endDate}</td>
                     <td>{item.price}</td>

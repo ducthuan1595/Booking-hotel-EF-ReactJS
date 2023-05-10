@@ -75,7 +75,7 @@ const Home = () => {
     getAllHotels();
   }, [])
 
-  console.log('number', numberHotelWithCity);
+  // console.log('number', numberHotelWithCity);
 
   return (
     <div>

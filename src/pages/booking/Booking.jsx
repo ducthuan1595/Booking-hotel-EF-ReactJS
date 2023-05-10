@@ -102,6 +102,7 @@ const Booking = () => {
       setPayment(e.target.value);
       setCheckSubmit('');
       setCheckMethod('')
+      setIsValid(false);
     }else {
       setCheckMethod('Please, choose paymethod!');
     }
