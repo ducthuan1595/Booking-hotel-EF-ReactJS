@@ -2,7 +2,8 @@ import "./searchItem.css";
 import { useDispatch, useSelector } from "react-redux";
 
 import { searchListHotel } from "../../store/hotelSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 
 const SearchItem = ({
   name,
@@ -18,9 +19,10 @@ const SearchItem = ({
   date
 }) => {
 
+  const params = useParams();
   const navigate = useNavigate();
   const hotels = useSelector(state => state.hotel.searchListHotel);
-  // console.log('hotels', hotels);
+  console.log('params', params);
 
   const handleBook = (id) => {
     navigate('/booking', { state: { date: date, hotelId: id}});

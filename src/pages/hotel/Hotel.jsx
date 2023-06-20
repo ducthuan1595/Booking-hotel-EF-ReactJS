@@ -36,7 +36,6 @@ const Hotel = () => {
     };
     getDetailHotel();
   }, []);
-  // console.log('detail-hotel', detailHotel);
 
   useEffect(() => {
     if(detailHotel) {
