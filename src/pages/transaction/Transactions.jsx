@@ -16,8 +16,8 @@ const Transactions = () => {
     const getTransactions = async () => {
       const res = await apiRequest.getTransactionWithUser(user.user._id);
       if (res.data.message === "ok") {
-        console.log("transactions", res.data.lists);
-        setTransactions(res.data.lists);
+        const data = res.data.lists.reverse();
+        setTransactions(data);
       }
     };
     getTransactions();
@@ -45,7 +45,7 @@ const Transactions = () => {
           </thead>
           <tbody>
             {transactions  ?
-              transactions.map((item, index) => {
+              transactions.reverse().map((item, index) => {
                 const rooms = item.rooms.map(room => {
                   return room.roomNumber;
                 }).flat().toString();
